@@ -31,5 +31,25 @@ const vueApp = new Vue({
             },
         ],
         indiceCorrente: 0,
+    },
+    methods: {
+        onClickPrev() {
+            let nuovoIndice = this.indiceCorrente - 1;
+
+            if (nuovoIndice < 0) {
+                nuovoIndice = this.imageList.length - 1;
+            }
+        
+            this.indiceCorrente = nuovoIndice
+        },
+        onClickNext() {
+            let nuovoIndice = this.indiceCorrente + 1;
+
+            if (nuovoIndice > this.imageList.length - 1) {
+                nuovoIndice = 0;
+            }
+
+            this.indiceCorrente = nuovoIndice
+        },
     }
 })
