@@ -17,14 +17,24 @@
     
     <header></header>
 
-    <main>
+    <main id="app">
         <div class="container">
             <div class="row py-5">
                 <div class="col-md-9 col-sm-9 col-xs-12 px-0">
-                    <div class="image-full"></div>
-                    <div class="text-image-full text-white">
-                        <div class="title-image-full"></div>
-                        <div class="description-image-full"></div>
+                    <div
+                    v-for="image in imageList"
+                    class="container_imageFull"
+                    >
+                        <div class="image-full">
+                            <!-- Immagini Full -->
+                            <img v-for="image in imageList" class="" :src="image.source" alt="Immagine indice #${i}">
+                        </div>
+
+                        <div class="text-image-full text-white">
+                            <div class="title-image-full"> {{ image.title }} </div>
+                            <div class="description-image-full"> {{ image.description }} </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 px-0">
@@ -33,7 +43,12 @@
                         <div class="arrow arrow-top"><i class="fas fa-chevron-up fa-2x"></i></div>
 
                         <div class="row row--image-thumb">
-                            
+                            <!-- Immagini Thumb -->
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="image-thumb">
+                                    <img src="${indiceImmagine}" alt="Immagine indice #${i}">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="arrow arrow-bottom"><i class="fas fa-chevron-down fa-2x"></i></div>

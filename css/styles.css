@@ -3,17 +3,20 @@
     border: 1px solid blue;
     position: relative;
 }
-.image-full > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.container_imageFull {
     position: absolute;
     top: 0;
     left: 0;
+}
+.container_imageFull > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s;
 }
-.image-full > img.active{
+.container_imageFull > img.active{
     opacity: 1;
 }
 .image-thumb{
